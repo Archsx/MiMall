@@ -13,7 +13,6 @@ export default {
     }
   },
   components: {
-    HelloWorld
   },
   mounted() {
   }

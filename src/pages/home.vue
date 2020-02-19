@@ -7,9 +7,16 @@
 </template>
 
 <script>
+import NavHeader from '../components/NavHeader'
+import NavFooter from '../components/NavFooter'
 export default {
   data() {
     return {};
+  },
+  name:'nav-home',
+  components:{
+    NavHeader,
+    NavFooter
   }
 };
 </script>
