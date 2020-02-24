@@ -37,25 +37,25 @@ export default {
     const res = this.findItem(key);
     return res ? res[key] : undefined;
   },
-  setItem(key, value) {
-    const res = this.findItem(key);
-    if (res) {
-      res[key] = value;
-      this.setStorage(res);
-    } else {
-      const data = this.getStorage();
-      data[key] = value;
-      this.setStorage(data);
-    }
-  },
-  clear(key){
-    const res = this.findItem(key);
-    if(res){
-        res[key] = null
-        delete res[key]
-        this.setStorage(res)
-    }
-  }
+//   setItem(key, value) {
+//     const res = this.findItem(key);
+//     if (res) {
+//       res[key] = value;
+//       this.setStorage(res);
+//     } else {
+//       const data = this.getStorage();
+//       data[key] = value;
+//       this.setStorage(data);
+//     }
+//   },
+//   clear(key){
+//     const res = this.findItem(key);
+//     if(res){
+//         res[key] = null
+//         delete res[key]
+//         this.setStorage(res)
+//     }
+//   }
 };
 
 // export default {

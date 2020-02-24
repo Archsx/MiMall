@@ -5,22 +5,18 @@
 </template>
 
 <script>
-// import util from "./storage";
 export default {
   name: "app",
   data() {
-    return {};
+    return {
+      res:{}
+    };
   },
   components: {},
   mounted() {
-    // util.setItem('user',{
-    //   name:'me',
-    //   info:{
-    //     age:24,
-    //     gender:'male'
-    //   }
-    // })
-    // util.clear("age")
+    this.axios.get('/user/login').then(result=>{
+      this.res = result
+    })
   }
 };
 </script>
