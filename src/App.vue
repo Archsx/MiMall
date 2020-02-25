@@ -9,15 +9,10 @@ export default {
   name: "app",
   data() {
     return {
-      res:{}
     };
   },
   components: {},
-  mounted() {
-    this.axios.get('/user/login').then(result=>{
-      this.res = result
-    })
-  }
+  mounted() {}
 };
 </script>
 
