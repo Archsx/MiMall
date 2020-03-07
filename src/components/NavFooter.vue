@@ -14,10 +14,11 @@
         >ElementUI</a
       >
       <a href="http://github.com/" target="_blank">Github</a>
+      <p>
+        Copyright ©2019 mi.futurefe.com All Rights Reserved.
+      </p>
     </div>
-    <div class="copyright">
-      Copyright ©2019 mi.futurefe.com All Rights Reserved.
-    </div>
+    <!-- <div class="copyright"></div> -->
   </div>
 </template>
 
@@ -44,7 +45,8 @@ export default {
     }
   }
   .footer-link {
-    margin: 31px 0 1em 0;
+    margin-top: 31px;
+    line-height: 23px;
     a {
       color: #999;
     }
