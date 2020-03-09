@@ -261,6 +261,7 @@ export default {
               color: $colorA;
             }
             .children {
+              z-index: 10;
               height: 220px;
               opacity: 1;
             }
