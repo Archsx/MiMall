@@ -71,44 +71,54 @@
           <img src="/imgs/banner-1.png" alt="" />
         </a>
       </div>
-
     </div>
-          <div class="product-box">
-        <div class="container">
-          <h2>手机</h2>
-          <div class="wrapper">
-            <div class="banner-left">
-              <a href="/#/product/35">
-                <img src="/imgs/mix-alpha.jpg" alt="" />
-              </a>
-            </div>
-            <div class="list-box">
-              <div class="list" v-for="(arr, i) in phoneList" :key="i">
-                <div class="item" v-for="(item, index) in arr" :key="index">
-                  <span  :class="{'new-pro':index % 2 ==0}">新品</span>
-                  <div class="item-img">
-                    <img
-                      :src="item.mainImage"
-                      alt=""
-                    />
-                  </div>
-                  <div class="item-info">
-                    <h3>{{item.name}}</h3>
-                    <p>{{item.subtitle}}</p>
-                    <p class="price">{{item.price}}元</p>
-                  </div>
+    <div class="product-box">
+      <div class="container">
+        <h2>手机</h2>
+        <div class="wrapper">
+          <div class="banner-left">
+            <a href="/#/product/35">
+              <img src="/imgs/mix-alpha.jpg" alt="" />
+            </a>
+          </div>
+          <div class="list-box">
+            <div class="list" v-for="(arr, i) in phoneList" :key="i">
+              <div class="item" v-for="(item, index) in arr" :key="index">
+                <span :class="{ 'new-pro': index % 2 == 0 }">新品</span>
+                <div class="item-img">
+                  <img :src="item.mainImage" alt="" />
+                </div>
+                <div class="item-info">
+                  <h3>{{ item.name }}</h3>
+                  <p>{{ item.subtitle }}</p>
+                  <p class="price">{{ item.price }}元</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </div>
     <service-bar> </service-bar>
+    <modal
+      title="提示"
+      confirmText="查看购物车"
+      btnType="1"
+      modalType="middle"
+      :showModal="showModal"
+    >
+    <template v-slot:body>
+        <p>商品添加成功！</p>
+    </template>
+    
+    
+    </modal>
   </div>
 </template>
 
 <script>
 import ServiceBar from "../components/ServiceBar";
+import Modal from "../components/Modal";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 import "swiper/dist/css/swiper.css";
 export default {
@@ -116,213 +126,217 @@ export default {
   components: {
     ServiceBar,
     swiper,
-    swiperSlide
+    swiperSlide,
+    Modal,
   },
   data() {
     return {
+      showModal: true,
       swiperOption: {
         // autoplay: true,
         pagination: {
           el: ".swiper-pagination",
-          clickable: true
+          clickable: true,
         },
         loop: true,
         effect: "cube",
         cubeEffect: {
           shadowOffset: 100,
-          shadowScale: 0.6
+          shadowScale: 0.6,
         },
         navigation: {
           nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev"
-        }
+          prevEl: ".swiper-button-prev",
+        },
       },
       slideList: [
         {
           id: "42",
-          img: "/imgs/slider/slide-1.jpg"
+          img: "/imgs/slider/slide-1.jpg",
         },
         {
           id: "45",
-          img: "/imgs/slider/slide-2.jpg"
+          img: "/imgs/slider/slide-2.jpg",
         },
         {
           id: "46",
-          img: "/imgs/slider/slide-3.jpg"
-        }
+          img: "/imgs/slider/slide-3.jpg",
+        },
       ],
       menuList: [
         [
           {
             id: 30,
             img: "/imgs/item-box-1.png",
-            name: "小米CC9"
+            name: "小米CC9",
           },
           {
             id: 31,
             img: "/imgs/item-box-2.png",
-            name: "小米8青春版"
+            name: "小米8青春版",
           },
           {
             id: 32,
             img: "/imgs/item-box-3.jpg",
-            name: "Redmi K20 Pro"
+            name: "Redmi K20 Pro",
           },
           {
             id: 33,
             img: "/imgs/item-box-4.jpg",
-            name: "移动4G专区"
-          }
+            name: "移动4G专区",
+          },
         ],
         [
           {
             id: 30,
             img: "/imgs/item-box-1.png",
-            name: "小米CC9"
+            name: "小米CC9",
           },
           {
             id: 31,
             img: "/imgs/item-box-2.png",
-            name: "小米8青春版"
+            name: "小米8青春版",
           },
           {
             id: 32,
             img: "/imgs/item-box-3.jpg",
-            name: "Redmi K20 Pro"
+            name: "Redmi K20 Pro",
           },
           {
             id: 33,
             img: "/imgs/item-box-4.jpg",
-            name: "移动4G专区"
-          }
+            name: "移动4G专区",
+          },
         ],
         [
           {
             id: 30,
             img: "/imgs/item-box-1.png",
-            name: "小米CC9"
+            name: "小米CC9",
           },
           {
             id: 31,
             img: "/imgs/item-box-2.png",
-            name: "小米8青春版"
+            name: "小米8青春版",
           },
           {
             id: 32,
             img: "/imgs/item-box-3.jpg",
-            name: "Redmi K20 Pro"
+            name: "Redmi K20 Pro",
           },
           {
             id: 33,
             img: "/imgs/item-box-4.jpg",
-            name: "移动4G专区"
-          }
+            name: "移动4G专区",
+          },
         ],
         [
           {
             id: 30,
             img: "/imgs/item-box-1.png",
-            name: "小米CC9"
+            name: "小米CC9",
           },
           {
             id: 31,
             img: "/imgs/item-box-2.png",
-            name: "小米8青春版"
+            name: "小米8青春版",
           },
           {
             id: 32,
             img: "/imgs/item-box-3.jpg",
-            name: "Redmi K20 Pro"
+            name: "Redmi K20 Pro",
           },
           {
             id: 33,
             img: "/imgs/item-box-4.jpg",
-            name: "移动4G专区"
-          }
+            name: "移动4G专区",
+          },
         ],
         [
           {
             id: 30,
             img: "/imgs/item-box-1.png",
-            name: "小米CC9"
+            name: "小米CC9",
           },
           {
             id: 31,
             img: "/imgs/item-box-2.png",
-            name: "小米8青春版"
+            name: "小米8青春版",
           },
           {
             id: 32,
             img: "/imgs/item-box-3.jpg",
-            name: "Redmi K20 Pro"
+            name: "Redmi K20 Pro",
           },
           {
             id: 33,
             img: "/imgs/item-box-4.jpg",
-            name: "移动4G专区"
-          }
+            name: "移动4G专区",
+          },
         ],
         [
           {
             id: 30,
             img: "/imgs/item-box-1.png",
-            name: "小米CC9"
+            name: "小米CC9",
           },
           {
             id: 31,
             img: "/imgs/item-box-2.png",
-            name: "小米8青春版"
+            name: "小米8青春版",
           },
           {
             id: 32,
             img: "/imgs/item-box-3.jpg",
-            name: "Redmi K20 Pro"
+            name: "Redmi K20 Pro",
           },
           {
             id: 33,
             img: "/imgs/item-box-4.jpg",
-            name: "移动4G专区"
-          }
-        ]
+            name: "移动4G专区",
+          },
+        ],
       ],
       adsList: [
         {
           id: 33,
-          img: "/imgs/ads/ads-1.png"
+          img: "/imgs/ads/ads-1.png",
         },
         {
           id: 48,
-          img: "/imgs/ads/ads-2.jpg"
+          img: "/imgs/ads/ads-2.jpg",
         },
         {
           id: 45,
-          img: "/imgs/ads/ads-3.png"
+          img: "/imgs/ads/ads-3.png",
         },
         {
           id: 47,
-          img: "/imgs/ads/ads-4.jpg"
-        }
+          img: "/imgs/ads/ads-4.jpg",
+        },
       ],
       phoneList: [
         [1, 1, 1, 1],
-        [2, 2, 2, 2]
-      ]
+        [2, 2, 2, 2],
+      ],
     };
   },
   mounted() {
-    this.init()
+    this.init();
   },
   methods: {
-    init(){
-      this.axios.get('/products',{
-        params:{
-          categoryId:100012,
-          pageSize:14
-        }
-      }).then(res=>{
-        this.phoneList = [res.list.slice(6,10),res.list.slice(10)]
-      })
-    }
+    init() {
+      this.axios
+        .get("/products", {
+          params: {
+            categoryId: 100012,
+            pageSize: 14,
+          },
+        })
+        .then((res) => {
+          this.phoneList = [res.list.slice(6, 10), res.list.slice(10)];
+        });
+    },
   },
 };
 </script>
@@ -478,17 +492,17 @@ export default {
               font-size: 14px;
               color: #fff;
               line-height: 24px;
-              &.new-pro{
-                background-color:#7ECF68;
+              &.new-pro {
+                background-color: #7ecf68;
               }
-              &.kill-pro{
-                background-color:#E82626;
+              &.kill-pro {
+                background-color: #e82626;
               }
             }
             .item-img {
               img {
                 height: 195px;
-                width:100%
+                width: 100%;
               }
             }
             .item-info {
